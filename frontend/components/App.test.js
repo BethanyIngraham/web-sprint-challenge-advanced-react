@@ -7,7 +7,7 @@ import AppFunctional from "./AppFunctional";
 
 let coordinates, steps, message, submit;
 const setElements = (document) => {
-  coordinates = document.querySelector("#coordinates");
+  coordinates = document.querySelector('#coordinates');
   steps = document.querySelector('#steps');
   message = document.querySelector('#message');
   submit = document.querySelector('#submit');
@@ -25,11 +25,11 @@ describe("function test", () => {
   });
   test("the coordinates message is rendered on the screen", () => {
     expect(coordinates).toBeVisible();
-    expect(coordinates).toHaveTextContent('Coordinates (2,2)');
+    expect(coordinates).toHaveTextContent("Coordinates (2,2)");
   });
   test("the steps message is rendered on the screen", () => {
     expect(steps).toBeVisible();
-    expect(steps).toHaveTextContent('You moved 0 times');
+    expect(steps).toHaveTextContent("You moved 0 times");
   });
   test("the form submit message renders on the screen", async () => {
     const user = userEvent.setup();
@@ -41,7 +41,7 @@ describe("function test", () => {
   test("typing on the input results in its value changing to the entered text", async () => {
     const user = userEvent.setup();
     const input = screen.getByPlaceholderText("type email");
-    await user.type(input, "hello@gmail.com");
-    expect(input).toHaveValue("hello@gmail.com");
+    await user.type(input, "goodbye@gmail.com");
+    expect(input).toHaveValue("goodbye@gmail.com");
   });
 });
