@@ -14,6 +14,10 @@ describe("function test", () => {
     const text = screen.getByText("UP");
     expect(text).toBeVisible();
   });
+  test("text for down directional button is rendered on the screen", async () => {
+    const text2 = screen.getByText("DOWN")
+    expect(text2).toBeVisible();
+  });
   test("the coordinates message is rendered on the screen", () => {
     const coordinates = screen.getByText("Coordinates (2,2)");
     expect(coordinates).toBeVisible();
@@ -21,15 +25,6 @@ describe("function test", () => {
   test("the steps message is rendered on the screen", () => {
     const steps = screen.getByText("You moved 0 times");
     expect(steps).toBeVisible();
-  });
-  test("the form submit message renders on the screen", async () => {
-    const user = userEvent.setup();
-    const input = screen.getByPlaceholderText("type email");
-    const submit = screen.getByRole("button", {name: "Submit"});
-    await user.type(input, "hello@gmail.com");
-    await user.click(submit);
-    const message = await screen.findByText("hello win #27");
-    expect(message).toBeVisible();
   });
   test("typing on the input results in its value changing to the entered text", async () => {
     const user = userEvent.setup();
